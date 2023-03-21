@@ -9,8 +9,6 @@ require('@/assets/styles/antd/antd.less');
 require('@/assets/styles/app.scss');
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(123);
-
   return (
     <Provider store={store}>
       <ConfigProvider locale={locale}>
