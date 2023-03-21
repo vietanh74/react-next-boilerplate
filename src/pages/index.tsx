@@ -1,5 +1,5 @@
 const Page = () => {
-  return <div>Hello</div>;
+  return <div className="flex overflow-auto">Hello</div>;
 };
 
 export default Page;
