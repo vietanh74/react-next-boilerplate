@@ -4,11 +4,11 @@ export const activeClassname = (always: string, add: boolean, activeClass: strin
   return add ? cx(always, activeClass) : always;
 };
 
-export const isProduction = () => {
+export const isProd = () => {
   return process.env.NODE_ENV === 'production';
 };
 
-export const isDevelopment = () => {
+export const isDev = () => {
   return process.env.NODE_ENV !== 'development';
 };
 
