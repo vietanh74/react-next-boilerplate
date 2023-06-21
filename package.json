@@ -1,5 +1,5 @@
 {
-  "name": "cs-request",
+  "name": "react-next-boilerplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,11 +8,11 @@
     "build:test": "NODE_ENV=test next build",
     "start": "next start",
     "types-check": "tsc --pretty --noEmit",
-    "lint:prettier": "prettier --check \"src/**/*+(js|jsx|ts|tsx|scss)\"",
-    "lint:script": "eslint -c .eslintrc.js \"./src/**/*.{js,ts,tsx}\"",
-    "lint:style": "stylelint src/**/*.{css,scss}",
-    "lint": "npm run lint:script && npm run lint:prettier && npm run lint:style",
-    "lintfix": "prettier --write --list-different \"src/**/*+(js|jsx|ts|tsx|scss)\" && npm run lint:script -- --fix && npm run lint:style -- --fix",
+    "lint:prettier": "prettier --check \"src/**/*+(js|jsx|ts|tsx|scss)\" --ignore-path .gitignore",
+    "lint:script": "eslint -c .eslintrc.js \"./src/**/*.{js,ts,tsx}\" --ignore-path .gitignore .",
+    "lint:style": "stylelint src/**/*.{css,scss} -i .gitignore -i .stylelintignore",
+    "lint": "npm run lint:script && npm run lint:prettier -- --check && npm run lint:style",
+    "lintfix": "npm run lint:prettier -- --write && npm run lint:script -- --fix && npm run lint:style -- --fix",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -53,17 +53,14 @@
     "next-plugin-antd-less": "^1.8.0",
     "postcss": "^8.4.13",
     "prettier": "^2.6.2",
-    "stylelint": "^14.8.2",
-    "stylelint-config-prettier-scss": "^0.0.1",
-    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
     "typescript": "^4.6.4"
   },
   "lint-staged": {
     "*.{js,ts,tsx,css,scss}": [
       "npm run lint"
     ]
-  },
-  "resolutions": {
-    "@turf/difference": "6.0.1"
   }
 }
