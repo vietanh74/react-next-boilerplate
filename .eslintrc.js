@@ -48,7 +48,7 @@ module.exports = {
 
   rules: {
     // prettier
-    'prettier/prettier': 'warn',
+    'prettier/prettier': ['warn', { endOfLine: 'auto' }],
 
     // eslint
     'no-console': 'off',
