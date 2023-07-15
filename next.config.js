@@ -1,8 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withAntdLess = require('next-plugin-antd-less');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   swcMinify: true,
   poweredByHeader: false,
   distDir: 'dist',
@@ -14,7 +11,3 @@ const nextConfig = {
     },
   },
 };
-
-module.exports = withAntdLess({
-  ...nextConfig,
-});
