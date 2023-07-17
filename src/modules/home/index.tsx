@@ -1,6 +1,7 @@
+'use client';
 import { Input } from 'antd';
 
-const Page = () => {
+const Home = () => {
   return (
     <div className="flex overflow-auto">
       <Input />
@@ -8,4 +9,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Home;

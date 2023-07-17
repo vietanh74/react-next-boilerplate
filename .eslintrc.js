@@ -124,6 +124,7 @@ module.exports = {
 
     // nextjs
     '@next/next/no-img-element': 'off',
+    '@next/next/no-page-custom-font': 'off',
 
     // @typescript-eslint
     '@typescript-eslint/array-type': ['warn'],

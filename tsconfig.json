@@ -25,7 +25,12 @@
     "isolatedModules": true,
     "noImplicitAny": false,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "exclude": [
     "node_modules",
@@ -39,6 +44,7 @@
     "types/**/*.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "dist/types/**/*.ts"
   ]
 }
