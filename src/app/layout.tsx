@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 import { AppProvider } from '@/core';
 import '@/assets/styles/app.scss';
@@ -19,7 +20,9 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
             rel="stylesheet"
           />
         </head>
-        <body suppressHydrationWarning>{children}</body>
+        <body suppressHydrationWarning>
+          <AntdRegistry>{children}</AntdRegistry>
+        </body>
       </html>
     </AppProvider>
   );
