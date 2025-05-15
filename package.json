@@ -63,10 +63,10 @@
     "typescript": "~5.3.3"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "npm run lint:partOfScript"
     ],
-    "*.{js,cjs,ts,vue,css,scss}": [
+    "*.{js,jsx,ts,tsx,css,scss}": [
       "npm run lint:partOfPrettier -- --check"
     ],
     "*.{css,scss}": [
