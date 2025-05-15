@@ -8,11 +8,14 @@
     "build:test": "NODE_ENV=test next build",
     "start": "next start",
     "types-check": "tsc --pretty --noEmit",
-    "lint:prettier": "prettier --check \"src/**/*+(js|jsx|ts|tsx|scss)\" --ignore-path .gitignore",
-    "lint:script": "eslint -c .eslintrc.js \"./src/**/*.{js,ts,tsx}\" --ignore-path .gitignore --ignore-path .eslintignore",
-    "lint:style": "stylelint src/**/*.{css,scss} -i .gitignore -i .stylelintignore",
-    "lint": "npm run lint:script && npm run lint:prettier -- --check && npm run lint:style",
-    "lintfix": "npm run lint:prettier -- --write && npm run lint:script -- --fix && npm run lint:style -- --fix",
+    "lint:partOfScript": "eslint -c .eslintrc.js --ignore-path .gitignore --ignore-path .eslintignore --quiet",
+    "lint:script": "npm run lint:partOfScript -- \"./src/**/*.{js,ts,tsx}\"",
+    "lint:partOfPrettier": "prettier --ignore-path .gitignore",
+    "lint:prettier": "npm run lint:partOfPrettier -- \"src/**/*+(js|jsx|ts|tsx|scss)\"",
+    "lint:partOfStyle": "stylelint --allow-empty-input -i .gitignore -i .stylelintignore",
+    "lint:style": "npm run lint:partOfStyle -- src/**/*.{css,scss}",
+    "lint": "npm run lint:style && npm run lint:prettier -- --check && npm run lint:script",
+    "lintfix": "npm run lint:style -- --fix && npm run lint:prettier -- --write && npm run lint:script -- --fix",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -60,8 +63,14 @@
     "typescript": "~5.3.3"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,css,scss}": [
-      "npm run lint"
+    "*.{js,ts,tsx}": [
+      "npm run lint:partOfScript"
+    ],
+    "*.{js,cjs,ts,vue,css,scss}": [
+      "npm run lint:partOfPrettier -- --check"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:partOfStyle"
     ]
   }
 }
