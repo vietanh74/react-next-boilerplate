@@ -10,7 +10,7 @@
     "types-check": "tsc --pretty --noEmit",
     "lint:partOfScript": "eslint -c eslint.config.mjs --quiet",
     "lint:script": "npm run lint:partOfScript --",
-    "lint:partOfPrettier": "prettier --ignore-path .gitignore",
+    "lint:partOfPrettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore",
     "lint:prettier": "npm run lint:partOfPrettier -- \"src/**/*+(js|jsx|ts|tsx|scss)\"",
     "lint:partOfStyle": "stylelint --allow-empty-input -i .gitignore -i .stylelintignore",
     "lint:style": "npm run lint:partOfStyle -- src/**/*.{css,scss}",
