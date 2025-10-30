@@ -21,7 +21,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
           />
         </head>
         <body suppressHydrationWarning>
-          <AntdRegistry>{children}</AntdRegistry>
+          <AntdRegistry layer>{children}</AntdRegistry>
         </body>
       </html>
     </AppProvider>

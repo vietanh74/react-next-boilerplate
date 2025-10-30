@@ -24,7 +24,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": false,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -45,6 +45,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "dist/types/**/*.ts"
+    "dist/types/**/*.ts",
+    "dist/dev/types/**/*.ts"
   ]
 }

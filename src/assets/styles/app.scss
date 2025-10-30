@@ -1,2 +1,5 @@
-@import './libs/tailwind';
-@import './common/general';
+@use './common/variable';
+@use './libs/antd';
+@use './common/fonts';
+@use './libs/tailwind';
+@use './common/general';

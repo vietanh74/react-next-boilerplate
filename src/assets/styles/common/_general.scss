@@ -1,17 +1,14 @@
-::-webkit-scrollbar {
-  width: 5px;
-  border-radius: 5px;
+body,
+html {
+  margin: 0;
+  height: 100%;
 }
 
-::-webkit-scrollbar-track {
-  box-shadow: none;
+body {
+  font-family: var(--font-family-base);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #bdbdbd;
-  border-radius: 14px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #bdbdbd;
+// Override base SVG style to work with Ant Design
+svg {
+  vertical-align: initial;
 }

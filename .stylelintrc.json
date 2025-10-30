@@ -11,7 +11,7 @@
         "ignoreAtRules": ["extends", "tailwind"]
       }
     ],
-    "comment-empty-line-before": "never",
+    "comment-empty-line-before": null,
     "rule-empty-line-before": [
       "always",
       {
@@ -26,8 +26,9 @@
     "selector-pseudo-class-no-unknown": [
       true,
       {
-        "ignorePseudoClasses": ["global"]
+        "ignorePseudoClasses": ["deep", "export"]
       }
-    ]
+    ],
+    "property-no-unknown": null
   }
 }

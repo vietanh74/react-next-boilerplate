@@ -1,0 +1,11 @@
+@layer tw-theme {
+  @import 'tailwindcss/theme.css';
+}
+
+@layer tw-utilities {
+  @import 'tailwindcss/utilities.css';
+}
+
+@theme {
+  --color-ghtk: #069255;
+}

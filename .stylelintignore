@@ -3,3 +3,4 @@
 **/*.ts
 **/*.tsx
 **/*.min.css
+src/assets/styles/libs/tailwind.scss
