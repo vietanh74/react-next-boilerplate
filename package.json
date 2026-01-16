@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--inspect next dev",
     "build": "next build",
-    "build:test": "NODE_ENV=test next build",
+    "build:testing": "env-cmd -f .env.testing next build",
     "start": "next start",
     "types-check": "tsc --pretty --noEmit",
     "lint:partOfScript": "eslint -c eslint.config.mjs --quiet",
@@ -47,6 +47,7 @@
     "@types/react-redux": "^7.1.34",
     "@typescript-eslint/parser": "^8.46.2",
     "cross-env": "^10.1.0",
+    "env-cmd": "^11.0.0",
     "eslint": "^9.38.0",
     "eslint-config-next": "^16.1.2",
     "eslint-config-prettier": "^10.1.8",
