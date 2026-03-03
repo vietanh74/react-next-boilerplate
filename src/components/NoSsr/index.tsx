@@ -1,25 +1,24 @@
-import { Component } from 'react';
+'use client';
 
-const DefaultOnSSR = () => <span></span>;
+import { useState, useEffect, ReactNode, FC } from 'react';
 
-class NoSSR extends Component<any, any> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      canRender: false,
-    };
-  }
-
-  componentDidMount() {
-    this.setState({ canRender: true });
-  }
-
-  render() {
-    const { children, onSSR = <DefaultOnSSR /> } = this.props;
-    const { canRender } = this.state;
-
-    return canRender ? children : onSSR;
-  }
+interface Props {
+  children: ReactNode;
+  fallback?: ReactNode;
 }
+
+const NoSSR: FC<Props> = ({ children, fallback }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <>{fallback}</>;
+  }
+
+  return <>{children}</>;
+};
 
 export default NoSSR;
