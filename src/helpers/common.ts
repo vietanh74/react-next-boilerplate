@@ -20,22 +20,18 @@ export const isBrowser = () => {
   return !isServer();
 };
 
-export const getOperatingSystem = () => {
-  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-
-  // Windows Phone must come first because its UA also contains "Android"
-  if (/windows phone/i.test(userAgent)) {
-    return 'Windows Phone';
+export const jsonDecode = (str: any) => {
+  try {
+    return JSON.parse(str);
+  } catch (error) {
+    return null;
   }
+};
 
-  if (/android/i.test(userAgent)) {
-    return 'Android';
+export const jsonEncode = (data: any) => {
+  try {
+    return JSON.stringify(data);
+  } catch (error) {
+    return null;
   }
-
-  // iOS detection from: http://stackoverflow.com/a/9039885/177710
-  if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
-    return 'iOS';
-  }
-
-  return 'unknown';
 };

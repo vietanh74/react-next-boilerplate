@@ -15,10 +15,10 @@ const NoSSR: FC<Props> = ({ children, fallback }) => {
   }, []);
 
   if (!isMounted) {
-    return <>{fallback}</>;
+    return fallback;
   }
 
-  return <>{children}</>;
+  return children;
 };
 
 export default NoSSR;
